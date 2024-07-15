@@ -6,6 +6,22 @@ on:
       - main  # Replace with your branch name if different
 
 jobs:
+  run-python-folder:   # this is name of jobs given by me
+    runs-on: ubuntu-latest  # GitHub Actions runner to use
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2  # Action to checkout the repository
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'  # Specify your Python version
+
+    - name: Execute Python script
+      run: |
+        cd python && python code.py
+
   run-python:   # this is name of jobs given by me
     runs-on: ubuntu-latest  # GitHub Actions runner to use
 

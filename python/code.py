@@ -1,0 +1,1 @@
+print('this code run inside of folder of python')
