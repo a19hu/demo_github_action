@@ -21,15 +21,21 @@ jobs:
         run: |
           cd demo && npm i
 
-      - name: run
+      - name: build
         run: |
-          cd demo && npm run
+          cd demo && npm run build
         
       - name: deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+        run: |
+          git config --global user.name $user_name
+          git config --global user.email $user_email
+          git remote set-url origin https://${github_token}@github.com/${repository}
+          npm run deploy
+        env:
+         user_name: 'github-actions[bot]'
+         user_email: 'github-actions[bot]@users.noreply.github.com'
+         github_token: ${{ secrets.GITHUB_TOKEN  }}
+         repository: ${{ github.repository }}
 
   run-python-folder:   # this is name of jobs given by me
     runs-on: ubuntu-latest  # GitHub Actions runner to use
