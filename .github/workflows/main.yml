@@ -6,7 +6,7 @@ on:
       - main  # Replace with your branch name if different
 
 jobs:
-  run-python:
+  run-python:   # this is name of jobs given by me
     runs-on: ubuntu-latest  # GitHub Actions runner to use
 
     steps:
