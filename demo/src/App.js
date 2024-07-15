@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  console.log('enter in folder')
   return (
     <div className="App">
       <header className="App-header">
