@@ -18,10 +18,13 @@ jobs:
           node-version: "18.16.1"
 
       - name: install dependences
-        run: cd demo && npm i
+        run: |
+          cd demo && npm i
 
       - name: run
-        run: npm run
+        run: |
+          pwd
+
   run-python-folder:   # this is name of jobs given by me
     runs-on: ubuntu-latest  # GitHub Actions runner to use
 
