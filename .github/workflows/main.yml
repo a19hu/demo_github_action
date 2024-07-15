@@ -7,7 +7,7 @@ on:
 
 jobs:
   run-app-folder:
-    runs-on: ubunut-latest
+    runs-on: ubuntu-latest
     steps:
       - name: checkout repo
         uses: actions/checkout@v2
